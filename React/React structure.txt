@@ -1,0 +1,26 @@
+montagem
+  constructor() 
+    inicializa variavel, faz bind
+  
+  render()
+    gerado html (monta o DOM)
+    
+  componentDidMount()
+    auto call after render  
+    
+atualização
+  novas props
+  mudança no estado
+  render() chamado novamente e atualiza DOM
+  componentDidUpdate()
+    validações
+
+desmontagem
+  componentWillUnmount()
+    virtual DOM compare with actual DOM finding Unmounts 
+
+  
+render()  
+if      é declaração, render não permite declaração
+ternary é expressão , render     permite expressão  
+
