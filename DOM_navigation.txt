@@ -1,0 +1,74 @@
+Reference:
+	https://www.w3schools.com/js/js_htmldom_navigation.asp
+	
+-----------------
+| Root element: | parent node
+|    <html>     |<<------------
+-----------------             |
+      |                       |
+      |                       |   ---------------
+      |  firstChild     -------------           |
+      |--------------->>|  Element: |           |
+      |                 |   <head>  |           | childNodes
+      |                 -------------           | to <html>
+      |                  |        ^             | and siblings
+      |           nextSibling     ^             | to each other
+      |                  |        |             |
+      |                  |        |             |
+      |                  |        |             |
+      |                  V    previousSibling   |
+      |                  V        |             |
+      | lastChild       -------------           |
+      ---------------->>|  Element: |           |
+                        |   <body>  |           |
+                        -------------           |
+                                  ---------------
+                                  
+Navigating Between Nodes:
+-parentNode              | parentElement
+-childNodes[nodenumber]  | children (HTMLCollection)
+-firstChild              | firstElementChild
+-lastChild               | lastElementChild
+-nextSibling             | nextElementSibling
+-previousSibling         | previousElementSibling
+
+Reference:
+  https://www.w3schools.com/js/js_htmldom_nodelist.asp
+
+HTMLCollection is a collection of HTML elements.
+  document.getElementById("id");
+  document.getElementsByClassName("class");
+  document.getElementsByTagName("p");
+
+NodeList is a collection of document nodes.
+  document.querySelector('#id');
+  document.querySelectorAll('.classes');
+ 
+
+Adding and Deleting Elements:
+Reference:
+  https://www.w3schools.com/js/js_htmldom_document.asp
+-------------------------------------------------------------
+|             Method	          |       Description       |
+|-----------------------------------------------------------|
+| document.createElement('div')   | Create an HTML element  |
+|         .removeChild(element)	  | Remove an HTML element  |
+|         .appendChild(element)	  | Add an HTML element     |
+|         .replaceChild(new, old) | Replace an HTML element |
+-------------------------------------------------------------     
+
+tags properties 
+.innerText     --> text inside tag html
+.textContent   --> text inside tag html with descendants or hidden(display:none)
+.innerHTML     --> gets entire tag HTML contained
+.style         --> get css style
+.className     --> insert class name
+.classList.add --> add new class
+.includes()    --> check if includes
+
+add Events
+.addEventListener('click', recebeClick);
+.addEventListener('mouseover', mouseEmCima);
+.addEventListener('mouseleave', mouseSaiuDoElemento);
+
+      

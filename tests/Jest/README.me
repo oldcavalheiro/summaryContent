@@ -1,0 +1,105 @@
+instalar Jest:
+
+// verificar versão do node
+npm -v
+
+// atualizar lista de repositórios
+sudo apt update
+
+// caso não tenha o npm instale-o
+sudo apt install npm
+
+// com o node já instalado:
+// dentro da pasta do projeto
+npm init -y
+
+// o arquivo package.json vai ser criado
+troque a linha no arquivo 
+  "test": "echo \"Error: no test specified\" && exit 1"
+para
+  "test": "jest"
+  
+// instalar o Jest
+npm install --save-dev jest
+
+// depois de criado o arquivo .js (sum.test.js)
+no terminal use o comando:
+npm test
+  // se houver erro jest not found usar o comando:
+  ./node_modules/.bin/jest
+
+// inserir um .gitignore da pasta pasta node_modules
+ela é grande a prejudica a perfomance no git
+depois quando clonado no git ela é instalada com o npm install
+
+// É comum que o arquivo de teste tenha o mesmo nome que o script.js e
+fique na mesma pasta do arquivo que está sendo testado,
+acrescido da sufixo .test.js
+		 ou .spec.js
+
+// Jest procura por arquivos com as extensões:
+.js , .jsx , .ts e .tsx 
+dentro de uma pasta com o nome __tests__ ou
+arquivos com o sufixo .test ou .spec
+
+// exporta a função sum (sum.js)
+module.exports = sum; 
+
+// importa a função sum (sum.test.js)
+const sum = require('./sum'); // more info in file module exports
+
+// intellisense
+npm install @types/jest
+
+// ///////////////////
+// error solutions: //
+
+Solution 1
+1. Jest is installed, but is likely in your ./node_modules/.bin directory.
+
+2. You can append that to your command ./node_modules/.bin/jest --updateSnapshot.
+
+3. Since you already have jest as a scripts command in your package.json you can also run it with npm test -- --updateSnapshot.
+
+4. npm automatically adds ./node_modules/.bin to your path.
+
+5. Newer versions of yarn will resolve node module bin scripts, so you can also just run yarn jest {cmd} and it should work.
+
+
+Solution 2
+You need to run it this way :
+./node_modules/.bin/jest
+
+Solution 3
+I ran into similar issue. I fixed it by installing jest globally.
+npm install -g jest
+
+Solution 4
+nstall the Jest command-line interface (Jest CLI):
+npm install --save-dev jest-cli
+
+
+// ///////////////
+// to consider: //
+
+// jest.fn();    // simulação da função, apenas uma função por vez
+// jest.mock();  // todo um pacote de dependências ou módulo de uma vez.
+// jest.spyOn(); // transitar entre simulação e comportamento original
+
+jest.fn() Vs jest.spyOn() 
+	jest.spyOn() can be clean/reseted/restaured
+
+// 3x formas de limpar, resetar ou restaurar mocks:
+
+// 1. mock.mockClear()
+  // Útil quando você deseja limpar os dados de uso de uma simulação entre dois expect s;
+
+// 2. mock.mockReset()
+  // Faz o que o mockClear() faz;
+  // Remove qualquer retorno estipulado ou implementação;
+  // Útil quando você deseja resetar uma simulação para seu estado inicial;
+
+// 3. mock.mockRestore()
+  // Faz tudo que mockReset() faz;
+  // Restaura a implementação original;
+  // quando você quer simular funções em certos casos de teste e restaurar a implementação original em outros;

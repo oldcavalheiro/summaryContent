@@ -1,0 +1,29 @@
+./ means the current directory
+
+../ means the parent of the current directory, not the root directory
+
+/ is the root directory
+
+myfile.text is in the current directory, as is ./myfile.text
+
+../myfile.text is one level above you and /myfile.text lives in your root directory.
+
+Exporta: (função criada é exportada)
+module.exports = sum;
+module.exports = { sum };
+
+module.exports = {
+  getGreeting,
+  hackTheDb,
+  restartDb,
+};
+
+Import: (
+const sum = require('./sum'); // mesmo local
+const { sum } = require('../src/sum'); // outro local
+const { getGreeting, restartDb, hackTheDb } = require('../src/promises');
+
+js example:
+module.exports = { sum };
+const { sum } = require('../src/sum');
+
