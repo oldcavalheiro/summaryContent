@@ -1,0 +1,21 @@
+auto identação:
+arquivo
+  preferencias
+    configurações
+      pesquisar por "format on save mode"
+      
+identação 2x espaços:
+arquivo
+  preferencias
+    configurações
+      pesquisar por "tab"
+      	tab size
+      
+seleciona variavel e F2 = refatora todas
+
+ctrl +   k   + c = comenta td
+ctrl + shift + a = comenta tudo
+ctrl + shift + k = deleta linha sem selecionar
+
+ctrl + d = seleciona proxima palavra selecionada
+
